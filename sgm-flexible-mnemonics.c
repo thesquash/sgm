@@ -50,6 +50,10 @@
 #include <glib.h>
 
 
+#undef   G_LOG_DOMAIN
+#define  G_LOG_DOMAIN "SGM-Flexible-Mnemonics-Module"
+
+
 static void (*original_gtk_label_size_allocate) (GtkWidget     *widget,
                                                  GtkAllocation *allocation);
 
@@ -68,8 +72,9 @@ g_module_check_init (GModule *module)
    */
   if (gtk_check_version (3,9,8) != NULL)
   {
-    return "Your version of GTK+ is old enough that this module is redundant.\n"
-           "This module will therefore not load.";
+    g_warning ("\n   Your version of GTK+ is old enough that this module is redundant.\n"
+               "   This module will therefore not load.");
+    return "";
   }
 
   /*

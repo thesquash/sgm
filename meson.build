@@ -13,15 +13,6 @@ modules_install_dir = join_paths(gtk_dep.get_variable(
   default_value: get_option('libdir')), modules_subdir)
 
 
-# Don't enable this until the module is ready to go.
-#shared_module('sgm-overlay-scrolling-override',
-#  sources: [
-#    'sgm-overlay-scrolling-override.c',
-#  ],
-#  dependencies: [ gtk_dep ],
-#  install_dir: modules_install_dir,
-#  install: true,
-#)
 
 shared_module('sgm-flexible-mnemonics',
   sources: [
