@@ -9,7 +9,6 @@ gtk_dep = dependency('gtk+-3.0', version: '>= 3.8.0')
 modules_subdir = 'gtk-3.0/modules'
 modules_install_dir = join_paths(gtk_dep.get_variable(
   pkgconfig: 'libdir',
-  internal: 'libdir',
   default_value: get_option('libdir')), modules_subdir)
 
 
